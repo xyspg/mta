@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { MtaLogo } from "./MtaLogo";
 
-export const SubwayHeader = () => {
+interface SubwayHeaderProps {
+  stationName: string;
+}
+
+export const SubwayHeader = ({ stationName }: SubwayHeaderProps) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -27,7 +31,7 @@ export const SubwayHeader = () => {
             <MtaLogo />
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-white/90">
-            Welcome to 9 St
+            Welcome to {stationName}
           </h1>
         </div>
         <div className="text-4xl font-bold text-[#56a0d3]">
